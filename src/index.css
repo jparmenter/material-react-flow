@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+body.react-flow__node-default, body.react-flow__node-input, body.react-flow__node-output {
+  border: none;
+  padding: 0;
+}
