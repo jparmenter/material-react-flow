@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactFlow from 'react-flow-renderer';
 
-function App() {
+const App = () => {
+  const elements = [
+    { id: '1', type: 'input', data: { label: 'Node 1' }, position: { x: 250, y: 5 } },
+    // you can also pass a React Node as a label
+    { id: '2', data: { label: <div>Node 2</div> }, position: { x: 100, y: 100 } },
+    { id: 'e1-2', source: '1', target: '2', animated: true },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: 2000, height: '2000px'}}>
+      <ReactFlow elements={elements} />
     </div>
   );
 }
